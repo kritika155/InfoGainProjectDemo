@@ -1,0 +1,31 @@
+<div class="container ig-container">
+  <div class="row row-cols-1 row-cols-md-1">
+    <div class="col-md-6 col-lg-12 box">
+      <div class="support">
+        <h1><span class="no-br">Support Categories</span></h1>
+      </div>
+      <br />
+      <nav class="navbar">
+        <a
+          [routerLink]="['/yourlink']"
+          class="btn btn-outline-secondary btn-lg text-uppercase"
+          title="Go to {{ inkObject.headerText }}"
+          >{{ inkObject.headerText }}<i class="fas fa-long-arrow-alt-right"></i
+        ></a>
+        <a
+          [routerLink]="['/yourinstantinkaccount']"
+          class="btn btn-outline-secondary btn-lg text-uppercase"
+          title="Go to {{ linkObject.headerText }}"
+          >{{ linkObject.headerText }}<i class="fas fa-long-arrow-alt-right"></i
+        ></a>
+        <a
+          [routerLink]="['/yourprinterconnections']"
+          class="btn btn-outline-secondary btn-lg text-uppercase"
+          title="Go to {{ printerObject.headerText }}"
+          >{{ printerObject.headerText
+          }}<i class="fas fa-long-arrow-alt-right"></i
+        ></a>
+      </nav>
+    </div>
+  </div>
+</div>

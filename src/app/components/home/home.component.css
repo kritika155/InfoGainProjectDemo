@@ -1,0 +1,33 @@
+.heading {
+  font: size 24px;
+}
+.btn {
+  border-radius: 6px;
+  border-width: 2px;
+  font-size: 0.9em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 2.05em;
+  padding: 1.3em 1.35em;
+}
+.btn.btn-outline-secondary {
+  border-color: #fff;
+  color: grey !important;
+  box-shadow: 0px 6px 39px #888888;
+  background: 0;
+  padding: 1.25em 1.75em;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+a {
+  font-size: 18px;
+  width: 30%;
+}

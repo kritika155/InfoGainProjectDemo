@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-1">
+    <div class="col-md-6 col-lg-3 box">
+      <nav class="navbar">
+        <!-- <div style="width: 100%; height: auto">
+          <app-breadcrumb></app-breadcrumb>
+        </div> -->
+        <ul>
+          <li>
+            <a
+              [routerLink]="['/yourlink']"
+              title="Go to {{ inkObject.headerText }}"
+              class="firstLink"
+              >{{ inkObject.headerText
+              }}<i class="fas fa-long-arrow-alt-right"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              [routerLink]="['/yourinstantinkaccount']"
+              title="Go to {{ linkObject.headerText }}"
+              class="secondLink"
+              >{{ linkObject.headerText
+              }}<i class="fas fa-long-arrow-alt-right"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              [routerLink]="['/yourprinterconnections']"
+              title="Go to {{ printerObject.headerText }}"
+              class="thirdLink"
+              >{{ printerObject.headerText
+              }}<i class="fas fa-long-arrow-alt-right"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-md-6 col-lg-9 box">
+      <div class="row row-cols-1 row-cols-md-1">
+        <div class="sol col-12">Recommended Solutions</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<ol class="breadcrumb">
+  <li *ngFor="let breadcrumb of breadcrumbs">
+    <span [routerLink]="breadcrumb.url" routerLinkActive="router-link-active">
+      <span
+        aria-label="Previous"
+        (click)="navigateBack()"
+        class="breadcrumbLabel"
+        >‹ {{ breadcrumb.label }}</span
+      >
+    </span>
+  </li>
+</ol>
