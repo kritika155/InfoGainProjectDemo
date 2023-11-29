@@ -31,3 +31,17 @@ a {
   font-size: 18px;
   width: 30%;
 }
+@media only screen and (max-width: 600px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar a {
+    display: flex;
+    flex-direction: column;
+  }
+  a {
+    font-size: 18px;
+    width: 50%;
+  }
+}

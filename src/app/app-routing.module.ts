@@ -51,14 +51,14 @@ const routes: Routes = [
     path: yourinstantinkaccount,
     component: YourinstantinkaccountComponent,
     data: {
-      breadcrumb: 'yourlink',
+      breadcrumb: 'Support Categories',
     },
   },
   {
     path: yourprinterconnections,
     component: YourprinterconnectionsComponent,
     data: {
-      breadcrumb: 'yourinstantinkaccount',
+      breadcrumb: 'Support Categories',
     },
   },
   {

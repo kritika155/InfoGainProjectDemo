@@ -1,1 +1,59 @@
-<p>yourinstantinkaccount works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-lg-3">
+      <nav class="navbar">
+        <!-- <div style="width: 100%; height: auto">
+            <app-breadcrumb></app-breadcrumb>
+          </div> -->
+        <ul>
+          <li>
+            <button
+              class="clickButton secondLink"
+              (click)="updatedHeaderTextContent('yourlink', inkObject)"
+            >
+              {{ inkObject.headerText }}
+            </button>
+          </li>
+          <li>
+            <button
+              class="clickButton firstLink"
+              (click)="
+                updatedHeaderTextContent('yourinstantinkaccount', linkObject)
+              "
+            >
+              {{ linkObject.headerText }}
+            </button>
+          </li>
+          <li>
+            <button
+              class="clickButton thirdLink"
+              (click)="
+                updatedHeaderTextContent(
+                  'yourprinterconnections',
+                  printerObject
+                )
+              "
+            >
+              {{ printerObject.headerText }}
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-md-6 col-lg-9">
+      <div class="row row-cols-1 row-cols-md-1">
+        <div class="col-12 sol">Recommended Solutions</div>
+        <div id="contentbox1"></div>
+        <div id="contentbox2"></div>
+        <div id="contentbox3"></div>
+        <div id="contentbox4"></div>
+        <div id="contentbox5"></div>
+        <div id="contentbox6"></div>
+        <div id="contentbox7"></div>
+        <div id="contentbox8"></div>
+        <div id="contentbox9"></div>
+        <div id="contentbox10"></div>
+      </div>
+    </div>
+  </div>
+</div>

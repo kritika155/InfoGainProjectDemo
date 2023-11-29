@@ -1,1 +1,165 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapperClass {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+}
+.col-lg-3 {
+  flex: 0 0 auto;
+  width: 15% !important;
+}
+.container {
+  height: 100vh;
+}
+.heading {
+  font: size 24px;
+}
+/* .btn {
+    border-radius: 6px;
+    border-width: 2px;
+    font-size: 0.9em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 2.05em;
+    padding: 1.3em 1.35em;
+  }
+  .btn.btn-outline-secondary {
+    border-color: #fff;
+    color: grey !important;
+    box-shadow: 0px 6px 39px #888888;
+    background: 0;
+    padding: 1.25em 1.75em;
+  } */
+.row {
+  height: 100%;
+}
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.navbar {
+  position: relative;
+  left: -13%;
+  /* top: 10%; */
+}
+.navbar ul {
+  height: 100%;
+}
+.navbar ul li {
+  list-style-type: none;
+  padding-bottom: 23px;
+}
+.secondLink,
+.thirdLink {
+  font-size: 24px;
+  color: #737373;
+  position: relative;
+  left: -5%;
+}
+.card__tag {
+  font-size: 14px !important;
+  color: #212121 !important;
+}
+.card__title {
+  font-size: 24px !important;
+  color: #404040 !important;
+}
+#connect-btn-sign-in,
+#shipping-btn-sign-in,
+#account-btn-sign-in,
+#connect-btn-agent-support,
+#billing-btn-sign-in,
+#billing-btn-agent-support {
+  appearance: none !important;
+  border: 0px !important;
+  margin: 0px !important;
+  overflow: visible !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+  user-select: none !important;
+  vertical-align: middle !important;
+  -webkit-tap-highlight-color: transparent !important;
+  white-space: nowrap !important;
+  outline: 0px !important;
+  box-shadow: none !important;
+  -webkit-box-align: center !important;
+  align-items: center !important;
+  border-radius: 12px !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  -webkit-box-pack: center !important;
+  justify-content: center !important;
+  font-family: "Forma DJR UI", Arial, sans-serif !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  min-width: 112px !important;
+  padding: 12px 24px !important;
+  position: relative !important;
+  transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s,
+    color 0.3s ease 0s !important;
+  width: 25% !important;
+  background-color: rgb(2, 120, 171) !important;
+  color: rgb(255, 255, 255) !important;
+}
+.firstLink {
+  font-size: 24px;
+  color: #212121;
+}
+.sol {
+  font-size: 16px !important;
+  font-weight: bold !important;
+  color: #404040 !important;
+}
+a {
+  font-size: 18px;
+  text-decoration: none;
+  /* width: 50%; */
+}
+.container {
+  margin: 0px !important;
+}
+.clickButton {
+  border: none !important;
+  background: none !important;
+}
+.contentbox {
+  position: relative;
+  top: 4%;
+  left: -6%;
+}
+.card {
+  padding: 3%;
+}
+@media only screen and (max-width: 600px) {
+  .col-lg-3 {
+    flex: 0 0 auto;
+    width: 100% !important;
+  }
+  .navbar {
+    width: 100% !important;
+    position: relative !important;
+    left: 0px !important;
+  }
+  .navbar ul {
+    width: 100% !important;
+  }
+  a {
+    font-size: 18px;
+    width: 50%;
+  }
+  .secondLink,
+  .thirdLink {
+    font-size: 24px;
+    color: #737373;
+    position: relative;
+    left: 0;
+  }
+}

@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import {
+  ActivatedRoute,
+  Router,
+  NavigationEnd,
+  ActivatedRouteSnapshot,
+} from '@angular/router';
 interface tabData {
   headerText: string;
   order: string;
@@ -33,7 +39,11 @@ export class YourlinkComponent implements OnInit {
   linkObject!: any;
   printerObject!: any;
   objectdata: any;
-  constructor(private service: ApiService) {}
+  constructor(
+    private service: ApiService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
   ngOnInit() {
     this.getTabsData();
     if (this.data) {
@@ -82,7 +92,6 @@ export class YourlinkComponent implements OnInit {
     this.tab_identifier = tab_identifier;
     console.log('tab_identifier:', this.tab_identifier);
     console.log('data:', objectData);
-    debugger;
     let {
       contentbox1_Data,
       contentbox1_Position,
@@ -327,5 +336,8 @@ export class YourlinkComponent implements OnInit {
     this.contentbox10 = this.contentBoxData[9];
     a = <HTMLElement>document.getElementById('contentbox10');
     a.innerHTML = this.contentbox10.Data;
+    if (tab_identifier != 'yourlink') {
+      this.router.navigate([tab_identifier]);
+    }
   }
 }
