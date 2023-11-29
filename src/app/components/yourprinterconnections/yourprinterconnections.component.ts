@@ -48,7 +48,7 @@ export class YourprinterconnectionsComponent {
         };
         this.displayData.push(e);
       });
-      this.tab_identifier = 'yourlyourprinterconnectionsink';
+      this.tab_identifier = 'yourprinterconnections';
       if (this.displayData.length == 3) {
         this.displayData.sort((a: any, b: any) => a.order - b.order);
         console.log('Sorted display data', this.displayData);
@@ -288,47 +288,68 @@ export class YourprinterconnectionsComponent {
 
     this.contentBoxData.sort((a: any, b: any) => a.position - b.position);
     console.log('contentBoxData:', this.contentBoxData);
-    this.contentbox1 = this.contentBoxData[0];
+
     let a: any = '';
-    a = <HTMLElement>document.getElementById('contentbox1');
-    a.innerHTML = this.contentbox1.Data;
+    if (this.contentBoxData[0]) {
+      this.contentbox1 = this.contentBoxData[0];
+      a = <HTMLElement>document.getElementById('contentbox1');
+      a.innerHTML = this.contentbox1.Data;
+    }
 
-    this.contentbox2 = this.contentBoxData[1];
-    a = <HTMLElement>document.getElementById('contentbox2');
-    a.innerHTML = this.contentbox2.Data;
+    if (this.contentBoxData[1]) {
+      this.contentbox2 = this.contentBoxData[1];
+      a = <HTMLElement>document.getElementById('contentbox2');
+      a.innerHTML = this.contentbox2.Data;
+    }
 
-    this.contentbox3 = this.contentBoxData[2];
-    a = <HTMLElement>document.getElementById('contentbox3');
-    a.innerHTML = this.contentbox3.Data;
+    if (this.contentBoxData[2]) {
+      this.contentbox3 = this.contentBoxData[2];
+      a = <HTMLElement>document.getElementById('contentbox3');
+      a.innerHTML = this.contentbox3.Data;
+    }
 
-    this.contentbox4 = this.contentBoxData[3];
-    a = <HTMLElement>document.getElementById('contentbox4');
-    a.innerHTML = this.contentbox4.Data;
+    if (this.contentBoxData[3]) {
+      this.contentbox4 = this.contentBoxData[3];
+      a = <HTMLElement>document.getElementById('contentbox4');
+      a.innerHTML = this.contentbox4.Data;
+    }
 
-    this.contentbox5 = this.contentBoxData[4];
-    a = <HTMLElement>document.getElementById('contentbox5');
-    a.innerHTML = this.contentbox5.Data;
+    if (this.contentBoxData[4]) {
+      this.contentbox5 = this.contentBoxData[4];
+      a = <HTMLElement>document.getElementById('contentbox5');
+      a.innerHTML = this.contentbox5.Data;
+    }
 
-    this.contentbox6 = this.contentBoxData[5];
-    a = <HTMLElement>document.getElementById('contentbox6');
-    a.innerHTML = this.contentbox6.Data;
+    if (this.contentBoxData[5]) {
+      this.contentbox6 = this.contentBoxData[5];
+      a = <HTMLElement>document.getElementById('contentbox6');
+      a.innerHTML = this.contentbox6.Data;
+    }
 
-    this.contentbox7 = this.contentBoxData[6];
-    a = <HTMLElement>document.getElementById('contentbox7');
-    a.innerHTML = this.contentbox7.Data;
+    if (this.contentBoxData[6]) {
+      this.contentbox7 = this.contentBoxData[6];
+      a = <HTMLElement>document.getElementById('contentbox7');
+      a.innerHTML = this.contentbox7.Data;
+    }
 
-    this.contentbox8 = this.contentBoxData[7];
-    a = <HTMLElement>document.getElementById('contentbox8');
-    a.innerHTML = this.contentbox8.Data;
+    if (this.contentBoxData[7]) {
+      this.contentbox8 = this.contentBoxData[7];
+      a = <HTMLElement>document.getElementById('contentbox8');
+      a.innerHTML = this.contentbox8.Data;
+    }
 
-    this.contentbox9 = this.contentBoxData[8];
-    a = <HTMLElement>document.getElementById('contentbox9');
-    a.innerHTML = this.contentbox9.Data;
+    if (this.contentBoxData[8]) {
+      this.contentbox9 = this.contentBoxData[8];
+      a = <HTMLElement>document.getElementById('contentbox9');
+      a.innerHTML = this.contentbox9.Data;
+    }
 
-    this.contentbox10 = this.contentBoxData[9];
-    a = <HTMLElement>document.getElementById('contentbox10');
-    a.innerHTML = this.contentbox10.Data;
-    if (tab_identifier != 'yourlink') {
+    if (this.contentBoxData[9]) {
+      this.contentbox10 = this.contentBoxData[9];
+      a = <HTMLElement>document.getElementById('contentbox10');
+      a.innerHTML = this.contentbox10.Data;
+    }
+    if (tab_identifier != 'yourprinterconnections') {
       this.router.navigate([tab_identifier]);
     }
   }
