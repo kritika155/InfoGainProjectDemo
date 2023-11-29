@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   printerObject!: tabData;
   constructor(private service: ApiService) {}
   ngOnInit() {
-    this.getTabsData();
+    this.data = this.getTabsData();
     if (this.data) {
       console.log(this.data);
       this.data.forEach((e: any) => {
@@ -43,17 +43,6 @@ export class HomeComponent implements OnInit {
     }
   }
   getTabsData() {
-    this.data = this.service.getStudents();
-    // .subscribe((res) => {
-    //   this.jsonDataResult = res;
-    //   console.log('--- json :: ', this.jsonDataResult);
-
-    // this.jsonDataResult.data.forEach((element: any) => {
-    //   this.data.push(element);
-    // });
-
-    //   console.log('--- result :: ', this.data);
-    // });
-    console.log('--- result :: ', this.data);
+    return this.service.getData();
   }
 }

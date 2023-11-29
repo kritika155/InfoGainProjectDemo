@@ -1,13 +1,11 @@
-import { Component } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { ApiService } from './api.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiService } from 'src/app/services/api.service';
 
-@Component({
-  selector: 'app-yourinstantinkaccount',
-  templateUrl: './yourinstantinkaccount.component.html',
-  styleUrls: ['./yourinstantinkaccount.component.css'],
+@Injectable({
+  providedIn: 'root',
 })
-export class YourinstantinkaccountComponent {
+export class DataService {
   contentBoxData: Array<any> = [];
   tab_identifier: any;
   contentbox: any;
@@ -35,49 +33,22 @@ export class YourinstantinkaccountComponent {
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {}
-  ngOnInit() {
-    this.getTabsData();
-    if (this.data) {
-      console.log(this.data);
-      this.data.forEach((e: any) => {
-        const { headerText, order, tab_identifier } = e;
-        let a = {
-          headerText: headerText,
-          order: order,
-          tab_identifier: tab_identifier,
-        };
-        this.displayData.push(e);
-      });
-      this.tab_identifier = 'yourinstantinkaccount';
-      if (this.displayData.length == 3) {
-        this.displayData.sort((a: any, b: any) => a.order - b.order);
-        console.log('Sorted display data', this.displayData);
-        this.inkObject = this.displayData[0];
-
-        console.log('inkObject', this.inkObject);
-        this.linkObject = this.displayData[1];
-        this.objectdata = this.linkObject;
-        console.log('linkObject', this.linkObject);
-        this.printerObject = this.displayData[2];
-        console.log('printerObject', this.printerObject);
-      }
-
-      this.updatedHeaderTextContent(this.tab_identifier, this.objectdata);
-    }
-  }
   getTabsData() {
-    this.data = this.service.getStudents();
-    // .subscribe((res) => {
-    //   this.jsonDataResult = res;
-    //   console.log('--- json :: ', this.jsonDataResult);
+    return this.service.getData();
 
-    // this.jsonDataResult.data.forEach((element: any) => {
-    //   this.data.push(element);
-    // });
-
-    //   console.log('--- result :: ', this.data);
-    // });
     console.log('--- result :: ', this.data);
+  }
+  sortData(displayData: any) {
+    this.displayData = displayData;
+    this.displayData.sort((a: any, b: any) => a.order - b.order);
+    return this.displayData;
+  }
+  getdisplayData(displayData: any) {
+    this.data.forEach((e: any) => {
+      const { headerText, order, tab_identifier } = e;
+      this.displayData.push(e);
+    });
+    return displayData;
   }
   updatedHeaderTextContent(tab_identifier: any, objectData: any) {
     this.contentBoxData = [];
@@ -288,70 +259,6 @@ export class YourinstantinkaccountComponent {
 
     this.contentBoxData.sort((a: any, b: any) => a.position - b.position);
     console.log('contentBoxData:', this.contentBoxData);
-    this.contentbox1 = this.contentBoxData[0];
-    let a: any = '';
-    if (this.contentBoxData[0]) {
-      this.contentbox1 = this.contentBoxData[0];
-      a = <HTMLElement>document.getElementById('contentbox1');
-      a.innerHTML = this.contentbox1.Data;
-    }
-
-    if (this.contentBoxData[1]) {
-      this.contentbox2 = this.contentBoxData[1];
-      a = <HTMLElement>document.getElementById('contentbox2');
-      a.innerHTML = this.contentbox2.Data;
-    }
-
-    if (this.contentBoxData[2]) {
-      this.contentbox3 = this.contentBoxData[2];
-      a = <HTMLElement>document.getElementById('contentbox3');
-      a.innerHTML = this.contentbox3.Data;
-    }
-
-    if (this.contentBoxData[3]) {
-      this.contentbox4 = this.contentBoxData[3];
-      a = <HTMLElement>document.getElementById('contentbox4');
-      a.innerHTML = this.contentbox4.Data;
-    }
-
-    if (this.contentBoxData[4]) {
-      this.contentbox5 = this.contentBoxData[4];
-      a = <HTMLElement>document.getElementById('contentbox5');
-      a.innerHTML = this.contentbox5.Data;
-    }
-
-    if (this.contentBoxData[5]) {
-      this.contentbox6 = this.contentBoxData[5];
-      a = <HTMLElement>document.getElementById('contentbox6');
-      a.innerHTML = this.contentbox6.Data;
-    }
-
-    if (this.contentBoxData[6]) {
-      this.contentbox7 = this.contentBoxData[6];
-      a = <HTMLElement>document.getElementById('contentbox7');
-      a.innerHTML = this.contentbox7.Data;
-    }
-
-    if (this.contentBoxData[7]) {
-      this.contentbox8 = this.contentBoxData[7];
-      a = <HTMLElement>document.getElementById('contentbox8');
-      a.innerHTML = this.contentbox8.Data;
-    }
-
-    if (this.contentBoxData[8]) {
-      this.contentbox9 = this.contentBoxData[8];
-      a = <HTMLElement>document.getElementById('contentbox9');
-      a.innerHTML = this.contentbox9.Data;
-    }
-
-    if (this.contentBoxData[9]) {
-      this.contentbox10 = this.contentBoxData[9];
-      a = <HTMLElement>document.getElementById('contentbox10');
-      a.innerHTML = this.contentbox10.Data;
-    }
-
-    if (tab_identifier != 'yourinstantinkaccount') {
-      this.router.navigate([tab_identifier]);
-    }
+    return this.contentBoxData;
   }
 }

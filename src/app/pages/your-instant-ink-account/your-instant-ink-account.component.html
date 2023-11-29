@@ -3,12 +3,12 @@
     <div class="col-md-6 col-lg-3">
       <nav class="navbar">
         <!-- <div style="width: 100%; height: auto">
-          <app-breadcrumb></app-breadcrumb>
-        </div> -->
+              <app-breadcrumb></app-breadcrumb>
+            </div> -->
         <ul>
           <li>
             <button
-              class="clickButton firstLink"
+              class="clickButton secondLink"
               (click)="updatedHeaderTextContent('yourlink', inkObject)"
             >
               {{ inkObject.headerText }}
@@ -16,7 +16,7 @@
           </li>
           <li>
             <button
-              class="clickButton secondLink"
+              class="clickButton firstLink"
               (click)="
                 updatedHeaderTextContent('yourinstantinkaccount', linkObject)
               "

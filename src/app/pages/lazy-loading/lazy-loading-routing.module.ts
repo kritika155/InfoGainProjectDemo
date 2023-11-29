@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import mockdata from './Mock Data/mockdata.json';
-import { tabData } from './models/tabData.model';
-import { ApiService } from './services/api.service';
-
+import { YourPrinterConnectionComponent } from '../your-printer-connection/your-printer-connection.component';
+import { YourLinkComponent } from '../your-link/your-link.component';
+import { YourInstantInkAccountComponent } from '../your-instant-ink-account/your-instant-ink-account.component';
+import mockdata from '../../Mock Data/mockdata.json';
+import { tabData } from '../../models/tabData.model';
 let displayData: tabData[] = [];
 let yourlink = '';
 let yourinstantinkaccount = '';
@@ -13,33 +13,24 @@ let data = mockdata.data;
 getAppLinkData();
 const routes: Routes = [
   {
-    path: 'home',
-    component: HomeComponent,
+    path: yourlink,
+    component: YourLinkComponent,
   },
   {
-    path: '',
-    loadChildren: () =>
-      import('./pages/lazy-loading/lazy-loading.module').then(
-        (m) => m.LazyLoadingModule
-      ),
-    data: {
-      breadcrumb: 'Support Categories',
-    },
+    path: yourinstantinkaccount,
+    component: YourInstantInkAccountComponent,
   },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' },
   {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full',
+    path: yourprinterconnections,
+    component: YourPrinterConnectionComponent,
   },
-  // { path: '', component: HomeComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class LazyLoadingRoutingModule {}
 function getAppLinkData() {
   data.forEach((e: any) => {
     const { headerText, order, tab_identifier } = e;

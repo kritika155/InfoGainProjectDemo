@@ -5,7 +5,7 @@ import {
   NavigationEnd,
   ActivatedRouteSnapshot,
 } from '@angular/router';
-import { IBreadCrumb } from './breadcrumb.interface';
+import { IBreadCrumb } from '../../models/breadcrumb.interface';
 import { filter, distinctUntilChanged } from 'rxjs/operators';
 import { Location } from '@angular/common';
 

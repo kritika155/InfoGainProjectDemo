@@ -11,11 +11,8 @@ export class ApiService {
   data!: any[];
   // data: any = mockdata.data;
   constructor(private http: HttpClient) {}
-  getStudents() {
+  getData() {
     this.data = mockdata.data;
     return this.data;
-    // return this.http.get<[]>('assets/json/data.json');
-    // console.log('--- result :: ', this.data);
-    // return this.data;
   }
 }
