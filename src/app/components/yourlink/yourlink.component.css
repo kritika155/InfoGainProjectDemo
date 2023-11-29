@@ -29,10 +29,8 @@
   justify-content: space-around;
 }
 .navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   position: relative;
+  left: -13%;
   /* top: 10%; */
 }
 .navbar ul {
@@ -52,7 +50,9 @@
   color: #212121;
 }
 .sol {
-  font: 16px bold #404040 !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  color: #404040 !important;
   position: absolute;
   left: 20%;
   transform: translate(10px, 10px);
@@ -64,4 +64,13 @@ a {
 }
 .container {
   margin: 0px !important;
+}
+.clickButton {
+  border: none !important;
+  background: none !important;
+}
+.contentbox {
+  position: relative;
+  top: 4%;
+  left: -6%;
 }
