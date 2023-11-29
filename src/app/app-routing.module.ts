@@ -5,12 +5,6 @@ import mockdata from './Mock Data/mockdata.json';
 import { tabData } from './models/tabData.model';
 import { ApiService } from './services/api.service';
 
-let displayData: tabData[] = [];
-let yourlink = '';
-let yourinstantinkaccount = '';
-let yourprinterconnections = '';
-let data = mockdata.data;
-getAppLinkData();
 const routes: Routes = [
   {
     path: 'home',
@@ -40,23 +34,3 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
-function getAppLinkData() {
-  data.forEach((e: any) => {
-    const { headerText, order, tab_identifier } = e;
-    let a = {
-      headerText: headerText,
-      order: order,
-      tab_identifier: tab_identifier,
-    };
-    displayData.push(a);
-    console.log(displayData);
-  });
-  displayData.sort((a: any, b: any) => a.order - b.order);
-  console.log('Sorted display data', displayData);
-  yourlink = displayData[0].tab_identifier;
-  yourinstantinkaccount = displayData[1].tab_identifier;
-  yourprinterconnections = displayData[2].tab_identifier;
-  console.log('yourlink', yourlink);
-  console.log('yourinstantinkaccount', yourinstantinkaccount);
-  console.log('yourprinterconnections', yourprinterconnections);
-}
