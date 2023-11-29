@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import mockdata from '../Mock Data/mockdata.json';
+import data from '../../assets/json/data.json';
 @Injectable({
   providedIn: 'root',
 })
@@ -12,7 +13,8 @@ export class ApiService {
   // data: any = mockdata.data;
   constructor(private http: HttpClient) {}
   getData() {
-    this.data = mockdata.data;
+    this.data = data.data;
+    console.log('From json:', data.data);
     return this.data;
   }
 }

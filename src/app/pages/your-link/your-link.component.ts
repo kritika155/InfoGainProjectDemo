@@ -143,7 +143,7 @@ export class YourLinkComponent {
     } else {
       this.contentbox10 = '';
     }
-    if (tab_identifier != 'yourprinterconnections') {
+    if (tab_identifier != 'yourlink') {
       this.router.navigate([tab_identifier]);
     }
   }
