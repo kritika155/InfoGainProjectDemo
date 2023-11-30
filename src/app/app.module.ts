@@ -8,14 +8,25 @@ import { Observable } from 'rxjs';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { LazyLoadingModule } from './pages/lazy-loading/lazy-loading.module';
 import { HomeComponent } from './components/home/home.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { YourInstantInkAccountModule } from './pages/your-instant-ink-account/your-instant-ink-account.module';
+import { YourLinkModule } from './pages/your-link/your-link.module';
+import { YourPrinterConnectionModule } from './pages/your-printer-connection/your-printer-connection.module';
 
 @NgModule({
-  declarations: [AppComponent, BreadcrumbComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    BreadcrumbComponent,
+    HomeComponent,
+    PageNotFoundComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    LazyLoadingModule,
+    YourInstantInkAccountModule,
+    YourLinkModule,
+    YourPrinterConnectionModule,
   ],
   providers: [ApiService],
   bootstrap: [AppComponent],

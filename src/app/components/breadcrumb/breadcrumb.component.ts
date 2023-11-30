@@ -96,7 +96,7 @@ export class BreadcrumbComponent implements OnInit {
     return newBreadcrumbs;
   }
   navigateBack() {
-    this._location.back();
-    // this.router.navigate(['']);
+    // this._location.back();
+    this.router.navigate(['home']);
   }
 }
