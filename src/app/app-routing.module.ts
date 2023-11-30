@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import mockdata from './Mock Data/mockdata.json';
-import { tabData } from './models/tabData.model';
-import { ApiService } from './services/api.service';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomeComponent,
   },
   {
@@ -20,13 +17,11 @@ const routes: Routes = [
       breadcrumb: 'Support Categories',
     },
   },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' },
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: ' ',
     pathMatch: 'full',
   },
-  // { path: '', component: HomeComponent }
 ];
 
 @NgModule({

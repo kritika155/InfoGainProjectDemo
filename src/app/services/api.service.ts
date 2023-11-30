@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import mockdata from '../Mock Data/mockdata.json';
 import data from '../../assets/json/data.json';
 @Injectable({
   providedIn: 'root',
