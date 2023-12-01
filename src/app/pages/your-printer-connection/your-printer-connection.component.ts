@@ -8,6 +8,8 @@ import {
   updateContentBox,
   updateContentBoxHtmlDom,
 } from '../commons/helper-functions';
+import { Store } from '@ngrx/store';
+import * as Tab from '../../pages/commons/stores/actions/tab.action';
 @Component({
   selector: 'app-your-printer-connection',
   templateUrl: './your-printer-connection.component.html',
@@ -39,31 +41,47 @@ export class YourPrinterConnectionComponent {
   constructor(
     private service: ApiService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private store: Store<any>
   ) {}
   ngOnInit() {
     this.data = this.service.getData();
-    if (this.data) {
-      console.log(this.data);
-      this.displayData = getdisplayData(this.data);
-      console.log('display data', this.displayData);
-      this.tab_identifier = 'yourprinterconnections';
-      if (this.displayData.length == 3) {
-        this.displayData = sortData(this.displayData);
-        // this.displayData.sort((a: any, b: any) => a.order - b.order);
-        console.log('Sorted display data', this.displayData);
-        this.inkObject = this.displayData[0];
+    this.store.dispatch(new Tab.GetTabData());
+    this.store.select('tab').subscribe(
+      (response) => {
+        console.log(response);
+        console.log(response);
+        const { tab } = response;
+        const { data } = tab;
+        console.log(data);
+        this.data = data;
+        console.log(this.data);
+        if (this.data) {
+          console.log(this.data);
+          this.displayData = getdisplayData(this.data);
+          console.log('display data', this.displayData);
+          this.tab_identifier = 'yourprinterconnections';
+          if (this.displayData.length == 3) {
+            this.displayData = sortData(this.displayData);
+            // this.displayData.sort((a: any, b: any) => a.order - b.order);
+            console.log('Sorted display data', this.displayData);
+            this.inkObject = this.displayData[0];
 
-        console.log('inkObject', this.inkObject);
-        this.linkObject = this.displayData[1];
-        console.log('linkObject', this.linkObject);
-        this.printerObject = this.displayData[2];
-        this.objectdata = this.printerObject;
-        console.log('printerObject', this.printerObject);
+            console.log('inkObject', this.inkObject);
+            this.linkObject = this.displayData[1];
+            console.log('linkObject', this.linkObject);
+            this.printerObject = this.displayData[2];
+            this.objectdata = this.printerObject;
+            console.log('printerObject', this.printerObject);
+          }
+
+          this.updatedHeaderTextContent(this.tab_identifier, this.objectdata);
+        }
+      },
+      (error) => {
+        console.log(error);
       }
-
-      this.updatedHeaderTextContent(this.tab_identifier, this.objectdata);
-    }
+    );
   }
 
   updatedHeaderTextContent(tab_identifier: any, objectdata: any) {

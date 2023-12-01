@@ -14,6 +14,8 @@ import {
   updateContentBoxHtmlDom,
 } from '../commons/helper-functions';
 import { tabData } from 'src/app/models/tabData.model';
+import { Store } from '@ngrx/store';
+import * as Tab from '../../pages/commons/stores/actions/tab.action';
 
 @Component({
   selector: 'app-your-link',
@@ -46,29 +48,46 @@ export class YourLinkComponent {
   constructor(
     private service: ApiService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private store: Store<any>
   ) {}
   ngOnInit() {
     this.data = this.service.getData();
-    if (this.data) {
-      console.log(this.data);
-      this.displayData = getdisplayData(this.data);
-      console.log('display data', this.displayData);
-      this.tab_identifier = 'yourlink';
-      if (this.displayData.length == 3) {
-        this.displayData = sortData(this.displayData);
-        console.log('Sorted display data', this.displayData);
-        this.inkObject = this.displayData[0];
-        this.objectdata = this.inkObject;
-        console.log('inkObject', this.inkObject);
-        this.linkObject = this.displayData[1];
-        console.log('linkObject', this.linkObject);
-        this.printerObject = this.displayData[2];
-        console.log('printerObject', this.printerObject);
-      }
+    this.store.dispatch(new Tab.GetTabData());
 
-      this.updatedHeaderTextContent(this.tab_identifier, this.inkObject);
-    }
+    this.store.select('tab').subscribe(
+      (response) => {
+        console.log(response);
+        console.log(response);
+        const { tab } = response;
+        const { data } = tab;
+        console.log(data);
+        this.data = data;
+        console.log(this.data);
+        if (this.data) {
+          console.log(this.data);
+          this.displayData = getdisplayData(this.data);
+          console.log('display data', this.displayData);
+          this.tab_identifier = 'yourlink';
+          if (this.displayData.length == 3) {
+            this.displayData = sortData(this.displayData);
+            console.log('Sorted display data', this.displayData);
+            this.inkObject = this.displayData[0];
+            this.objectdata = this.inkObject;
+            console.log('inkObject', this.inkObject);
+            this.linkObject = this.displayData[1];
+            console.log('linkObject', this.linkObject);
+            this.printerObject = this.displayData[2];
+            console.log('printerObject', this.printerObject);
+          }
+
+          this.updatedHeaderTextContent(this.tab_identifier, this.inkObject);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
   updatedHeaderTextContent(tab_identifier: any, objectdata: any) {
     this.contentBoxData = updatedHeaderTextContent(tab_identifier, objectdata);
