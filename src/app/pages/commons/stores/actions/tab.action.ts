@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 export enum TabActionType {
-  ADD_ITEM = '[COURSE] Add Course',
+  ADD_ITEM = 'ADD_ITEM',
   GET_TABDATA = 'GET_TABDATA',
   GET_TABDATA_SUCCESS = 'GET_TABDATA_SUCCESS',
   GET_TABDATA_FAILED = 'GET_TABDATA_FAILED',

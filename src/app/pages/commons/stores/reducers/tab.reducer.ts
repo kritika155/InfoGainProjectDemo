@@ -18,5 +18,10 @@ export function tabReducer(state = initialState, action: TabActions) {
     case TabActionType.GET_TABDATA_FAILED: {
       return { ...state };
     }
+    case TabActionType.ADD_ITEM: {
+      return [{ ...state }, action.payload];
+    }
+    default:
+      return state;
   }
 }

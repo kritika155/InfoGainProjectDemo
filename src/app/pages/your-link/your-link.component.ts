@@ -52,7 +52,6 @@ export class YourLinkComponent {
     private store: Store<any>
   ) {}
   ngOnInit() {
-    this.data = this.service.getData();
     this.store.dispatch(new Tab.GetTabData());
 
     this.store.select('tab').subscribe(

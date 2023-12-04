@@ -36,24 +36,34 @@ export class HomeComponent implements OnInit {
         console.log(this.data);
         if (this.data) {
           console.log(this.data);
-          this.data.forEach((e: any) => {
-            const { headerText, order, tab_identifier } = e;
-            let a = {
-              headerText: headerText,
-              order: order,
-              tab_identifier: tab_identifier,
-            };
-            this.displayData.push(a);
+          this.displayData = [...this.data];
 
-            this.displayData.sort((a: any, b: any) => a.order - b.order);
-            console.log('Sorted display data', this.displayData);
-            this.inkObject = this.displayData[0];
-            this.linkObject = this.displayData[1];
-            this.printerObject = this.displayData[2];
-            console.log('inkObject', this.inkObject);
-            console.log('linkObject', this.linkObject);
-            console.log('printerObject', this.printerObject);
-          });
+          this.displayData.sort((a: any, b: any) => a.order - b.order);
+          console.log('Sorted display data', this.displayData);
+          this.inkObject = this.displayData[0];
+          this.linkObject = this.displayData[1];
+          this.printerObject = this.displayData[2];
+          console.log('inkObject', this.inkObject);
+          console.log('linkObject', this.linkObject);
+          console.log('printerObject', this.printerObject);
+          // this.data.forEach((e: any) => {
+          //   const { headerText, order, tab_identifier } = e;
+          //   let a = {
+          //     headerText: headerText,
+          //     order: order,
+          //     tab_identifier: tab_identifier,
+          //   };
+          //   this.displayData.push(a);
+
+          //   this.displayData.sort((a: any, b: any) => a.order - b.order);
+          //   console.log('Sorted display data', this.displayData);
+          //   this.inkObject = this.displayData[0];
+          //   this.linkObject = this.displayData[1];
+          //   this.printerObject = this.displayData[2];
+          //   console.log('inkObject', this.inkObject);
+          //   console.log('linkObject', this.linkObject);
+          //   console.log('printerObject', this.printerObject);
+          // });
         }
       },
       (error) => {

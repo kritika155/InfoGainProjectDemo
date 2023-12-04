@@ -47,8 +47,6 @@ export class YourInstantInkAccountComponent {
   ) {}
   ngOnInit() {
     this.store.dispatch(new Tab.GetTabData());
-
-    // this.data = this.service.getData();
     this.store.select('tab').subscribe(
       (response) => {
         console.log(response);

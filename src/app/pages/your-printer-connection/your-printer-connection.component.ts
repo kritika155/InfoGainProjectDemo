@@ -19,16 +19,16 @@ export class YourPrinterConnectionComponent {
   contentBoxData: Array<any> = [];
   tab_identifier: any;
   contentBox: any;
-  contentBox1: any;
-  contentBox2: any;
-  contentBox3: any;
-  contentBox4: any;
-  contentBox5: any;
-  contentBox6: any;
-  contentBox7: any;
-  contentBox8: any;
-  contentBox9: any;
-  contentBox10: any;
+  contentBoxPrinter1: any;
+  contentBoxPrinter2: any;
+  contentBoxPrinter3: any;
+  contentBoxPrinter4: any;
+  contentBoxPrinter5: any;
+  contentBoxPrinter6: any;
+  contentBoxPrinter7: any;
+  contentBoxPrinter8: any;
+  contentBoxPrinter9: any;
+  contentBoxPrinter10: any;
   headerText: any;
   dynamicContent: any;
   jsonDataResult: any;
@@ -45,7 +45,6 @@ export class YourPrinterConnectionComponent {
     private store: Store<any>
   ) {}
   ngOnInit() {
-    this.data = this.service.getData();
     this.store.dispatch(new Tab.GetTabData());
     this.store.select('tab').subscribe(
       (response) => {
@@ -88,75 +87,75 @@ export class YourPrinterConnectionComponent {
     this.contentBoxData = updatedHeaderTextContent(tab_identifier, objectdata);
 
     let a: any = '';
-    this.contentBox1 = updateContentBox(
+    this.contentBoxPrinter1 = updateContentBox(
       this.contentBoxData[0],
-      this.contentBox1
+      this.contentBoxPrinter1
     );
-    a = 'contentbox1';
-    a = updateContentBoxHtmlDom(a, this.contentBox1.Data);
+    a = 'contentboxPrinter1';
+    a = updateContentBoxHtmlDom(a, this.contentBoxPrinter1.Data);
 
-    this.contentBox2 = updateContentBox(
+    this.contentBoxPrinter2 = updateContentBox(
       this.contentBoxData[1],
-      this.contentBox2
+      this.contentBoxPrinter2
     );
-    a = 'contentbox2';
-    a = updateContentBoxHtmlDom(a, this.contentBox2.Data);
+    a = 'contentboxPrinter2';
+    a = updateContentBoxHtmlDom(a, this.contentBoxPrinter2.Data);
 
-    this.contentBox3 = updateContentBox(
+    this.contentBoxPrinter3 = updateContentBox(
       this.contentBoxData[2],
-      this.contentBox3
+      this.contentBoxPrinter3
     );
-    a = 'contentbox3';
-    a = updateContentBoxHtmlDom(a, this.contentBox3.Data);
+    a = 'contentboxPrinter3';
+    a = updateContentBoxHtmlDom(a, this.contentBoxPrinter3.Data);
 
-    this.contentBox4 = updateContentBox(
+    this.contentBoxPrinter4 = updateContentBox(
       this.contentBoxData[3],
-      this.contentBox4
+      this.contentBoxPrinter4
     );
-    a = 'contentbox4';
-    a = updateContentBoxHtmlDom(a, this.contentBox4.Data);
+    a = 'contentboxPrinter4';
+    a = updateContentBoxHtmlDom(a, this.contentBoxPrinter4.Data);
 
-    this.contentBox5 = updateContentBox(
+    this.contentBoxPrinter5 = updateContentBox(
       this.contentBoxData[4],
-      this.contentBox5
+      this.contentBoxPrinter5
     );
-    a = 'contentbox5';
-    a = updateContentBoxHtmlDom(a, this.contentBox5.Data);
+    a = 'contentboxPrinter5';
+    a = updateContentBoxHtmlDom(a, this.contentBoxPrinter5.Data);
 
-    this.contentBox6 = updateContentBox(
+    this.contentBoxPrinter6 = updateContentBox(
       this.contentBoxData[5],
-      this.contentBox6
+      this.contentBoxPrinter6
     );
-    a = 'contentbox6';
-    a = updateContentBoxHtmlDom(a, this.contentBox6.Data);
+    a = 'contentboxPrinter6';
+    a = updateContentBoxHtmlDom(a, this.contentBoxPrinter6.Data);
 
-    this.contentBox7 = updateContentBox(
+    this.contentBoxPrinter7 = updateContentBox(
       this.contentBoxData[6],
-      this.contentBox7
+      this.contentBoxPrinter7
     );
-    a = 'contentbox7';
-    a = updateContentBoxHtmlDom(a, this.contentBox7.Data);
+    a = 'contentboxPrinter7';
+    a = updateContentBoxHtmlDom(a, this.contentBoxPrinter7.Data);
 
-    this.contentBox8 = updateContentBox(
+    this.contentBoxPrinter8 = updateContentBox(
       this.contentBoxData[7],
-      this.contentBox8
+      this.contentBoxPrinter8
     );
-    a = 'contentbox8';
-    a = updateContentBoxHtmlDom(a, this.contentBox8.Data);
+    a = 'contentboxPrinter8';
+    a = updateContentBoxHtmlDom(a, this.contentBoxPrinter8.Data);
 
-    this.contentBox9 = updateContentBox(
+    this.contentBoxPrinter9 = updateContentBox(
       this.contentBoxData[8],
-      this.contentBox9
+      this.contentBoxPrinter9
     );
-    a = 'contentbox9';
-    a = updateContentBoxHtmlDom(a, this.contentBox9.Data);
+    a = 'contentboxPrinter9';
+    a = updateContentBoxHtmlDom(a, this.contentBoxPrinter9.Data);
 
-    this.contentBox10 = updateContentBox(
+    this.contentBoxPrinter10 = updateContentBox(
       this.contentBoxData[9],
-      this.contentBox10
+      this.contentBoxPrinter10
     );
-    a = 'contentbox10';
-    a = updateContentBoxHtmlDom(a, this.contentBox10.Data);
+    a = 'contentboxPrinter10';
+    a = updateContentBoxHtmlDom(a, this.contentBoxPrinter10.Data);
 
     // let connectToWiFIsh: any = <HTMLElement>(
     //   document.getElementById('connect-to-wifi-ish_3259780-2802006-16')
